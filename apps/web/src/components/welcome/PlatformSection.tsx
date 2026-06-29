@@ -61,7 +61,11 @@ export default function PlatformSection({ id }: PlatformSectionProps) {
                 key={platform.id}
                 platform={platform}
                 index={i}
-                onClick={() => window.open(platform.url, '_blank', 'noopener,noreferrer')}
+                onClick={() => {
+                  if (platform.url) {
+                    window.open(platform.url, '_blank', 'noopener,noreferrer')
+                  }
+                }}
               />
             ))}
           </div>

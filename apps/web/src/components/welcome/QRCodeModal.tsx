@@ -100,22 +100,13 @@ export default function QRCodeModal({ isOpen, onClose, qrcodeSrc }: QRCodeModalP
               <h3 className="text-lg font-semibold text-text-primary">微信公众号</h3>
               <p className="text-sm text-text-secondary">扫码关注小陈，获取更多内容</p>
 
-              <div className="relative mt-2 flex aspect-square w-full max-w-[220px] items-center justify-center overflow-hidden rounded-xl border border-border bg-white/5">
-                {/* Placeholder QR code */}
-                <div className="flex flex-col items-center gap-3 text-text-secondary">
-                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="7" height="7" />
-                    <rect x="14" y="3" width="7" height="7" />
-                    <rect x="3" y="14" width="7" height="7" />
-                    <rect x="14" y="14" width="3" height="3" />
-                    <rect x="19" y="14" width="2" height="2" />
-                    <rect x="17" y="17" width="2" height="2" />
-                    <rect x="14" y="19" width="3" height="2" />
-                    <rect x="19" y="17" width="2" height="4" />
-                  </svg>
-                  <span className="text-xs">二维码占位</span>
-                  <span className="text-xs opacity-60">替换为 /images/qrcode-wechat.jpg</span>
-                </div>
+              <div className="relative mt-2 flex aspect-square w-full max-w-[220px] items-center justify-center overflow-hidden rounded-xl border border-border bg-white">
+                {/* WeChat Public Account QR Code */}
+                <img
+                  src={qrcodeSrc}
+                  alt="微信公众号二维码"
+                  className="h-full w-full object-contain"
+                />
               </div>
 
               {/* Drag handle on mobile */}

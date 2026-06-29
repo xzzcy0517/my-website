@@ -53,6 +53,7 @@ interface PlatformIconProps {
 export default function PlatformIcon({ platform, index, onClick }: PlatformIconProps) {
   const glowColor = platform.color === 'accent-warm' ? 'rgba(212, 165, 116, 0.3)' : 'rgba(94, 234, 212, 0.3)'
   const accentClass = platform.color === 'accent-warm' ? 'text-accent-warm' : 'text-accent-cool'
+  const isClickable = !!platform.url
 
   return (
     <motion.button
@@ -61,14 +62,20 @@ export default function PlatformIcon({ platform, index, onClick }: PlatformIconP
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-50px' }}
-      whileHover={{
-        scale: 1.08,
-        boxShadow: `0 0 24px ${glowColor}, 0 0 48px ${glowColor}`,
-        borderColor: platform.color === 'accent-warm' ? 'rgba(212, 165, 116, 0.4)' : 'rgba(94, 234, 212, 0.4)',
-      }}
-      whileTap={{ scale: 0.96 }}
+      whileHover={
+        isClickable
+          ? {
+              scale: 1.08,
+              boxShadow: `0 0 24px ${glowColor}, 0 0 48px ${glowColor}`,
+              borderColor: platform.color === 'accent-warm' ? 'rgba(212, 165, 116, 0.4)' : 'rgba(94, 234, 212, 0.4)',
+            }
+          : {}
+      }
+      whileTap={isClickable ? { scale: 0.96 } : {}}
       onClick={onClick}
-      className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-bg-secondary/50 px-6 py-5 backdrop-blur-sm transition-colors duration-200 min-w-[120px] min-h-[88px] cursor-pointer"
+      className={`flex flex-col items-center gap-3 rounded-2xl border border-border bg-bg-secondary/50 px-6 py-5 backdrop-blur-sm transition-colors duration-200 min-w-[120px] min-h-[88px] ${
+        isClickable ? 'cursor-pointer' : 'cursor-default opacity-70'
+      }`}
       style={{ WebkitTapHighlightColor: 'transparent' }}
     >
       <div className={accentClass}>{iconMap[platform.icon]}</div>

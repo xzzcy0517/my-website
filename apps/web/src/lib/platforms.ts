@@ -4,16 +4,16 @@ export const platforms: Platform[] = [
   {
     id: 'wechat-video',
     name: '微信视频号',
-    label: '全部内容',
-    url: 'https://channels.weixin.qq.com/user/placeholder',
+    label: '搜索「最喜欢真真的小陈」',
+    url: '', // 视频号无直链，需在微信内搜索
     icon: 'video',
     color: 'accent-cool',
   },
   {
     id: 'douyin',
     name: '抖音',
-    label: '全部内容',
-    url: 'https://www.douyin.com/user/placeholder',
+    label: '搜索「最喜欢真真的小陈」',
+    url: '', // 抖音无法直接跳转个人主页
     icon: 'music',
     color: 'accent-cool',
   },
@@ -21,7 +21,7 @@ export const platforms: Platform[] = [
     id: 'bilibili',
     name: '哔哩哔哩',
     label: '科技 AI',
-    url: 'https://space.bilibili.com/placeholder',
+    url: 'https://space.bilibili.com/24652369',
     icon: 'tv',
     color: 'accent-cool',
   },
@@ -29,7 +29,7 @@ export const platforms: Platform[] = [
     id: 'xiaohongshu',
     name: '小红书',
     label: '生活养生',
-    url: 'https://www.xiaohongshu.com/user/placeholder',
+    url: 'https://www.xiaohongshu.com/user/profile/5b500193f7e8b939e0e98def',
     icon: 'book',
     color: 'accent-warm',
   },
@@ -38,6 +38,6 @@ export const platforms: Platform[] = [
 export const wechatPublic: WechatPublic = {
   name: '微信公众号',
   label: '扫码关注',
-  qrcodePath: '/images/qrcode-wechat.jpg',
+  qrcodePath: '/images/vxgzh.jpg',
   color: 'accent-warm',
 }
