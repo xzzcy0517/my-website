@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Background colors */
+  --color-bg-primary: #08080c;
+  --color-bg-secondary: #111118;
+  --color-bg-tertiary: #1a1a24;
+
+  /* Accent - Warm Gold (生活养生) */
+  --color-accent-warm: #d4a574;
+  --color-accent-warm-glow: rgba(212, 165, 116, 0.3);
+  --color-accent-warm-soft: rgba(212, 165, 116, 0.08);
+
+  /* Accent - Cool Teal (科技 AI) */
+  --color-accent-cool: #5eead4;
+  --color-accent-cool-glow: rgba(94, 234, 212, 0.3);
+  --color-accent-cool-soft: rgba(94, 234, 212, 0.08);
+
+  /* Text */
+  --color-text-primary: #e4e4e7;
+  --color-text-secondary: #a1a1aa;
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(255, 255, 255, 0.12);
+
+  /* Font */
+  --font-sans: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, -apple-system,
+    sans-serif;
+  --font-mono: 'SF Mono', 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Selection */
+::selection {
+  background: rgba(94, 234, 212, 0.2);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-tertiary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-hover);
+}
